@@ -1,0 +1,29 @@
+<Tabs tabs="{{tabs}}" bindtabItemChange="tabsItemChange" >
+  <view class="feedback_main">
+    <view class="feedback_title">问题的种类</view>
+    <view class="feedback_tips">
+      <text>功能建议</text>
+      <text>购买遇到的问题</text>
+      <text>性能问题</text>
+      <text>其它</text>
+    </view>
+    <view class="feedback_content">
+      <textarea value="{{textValue}}" bindinput="bindInputchange" placeholder="请描述一下你的问题"></textarea>
+      <view class="feedback_tools">
+        <button bindtap="handleUpload">+</button>
+        <view class="up_img_item"
+          wx:for="{{chooseImgs}}"
+          wx:key="*this"
+          bindtap="handleRemove"
+          data-index="{{index}}"
+        ><UploadImg src="{{item}}"></UploadImg></view>
+      </view>
+    </view>
+    <view class="form_btn_wrap">
+      <button type="warn" bindtap="handleFormSumit">
+        <icon type="success_no_circle" size="23" color="white"></icon>
+        提交
+      </button>
+    </view>
+  </view>
+</Tabs>
